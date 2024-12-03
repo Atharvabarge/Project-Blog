@@ -18,6 +18,14 @@ app.use(cors({credentials:true,origin:'http://localhost:3000'}));
 app.use(express.json());
 app.use(cookieParser());
 app.use('/uploads', express.static(__dirname + '/uploads'));
+app.use(cors(
+  {
+      origin: ["https://deploy-mern-1whq.vercel.app"],
+      methods: ["POST","GET"],
+      credentials: true
+      
+  }
+));  
 
 url ='mongodb+srv://atharvBlog:bXk9d5R7Pb9qXgJy@cluster0.eb0f0zb.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0'
 
